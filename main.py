@@ -13,6 +13,7 @@ display_height = 600
 black = (0, 0, 0)
 white = (255, 255, 255)
 
+font = pygame.font.Font("resources/vgaoem.fon", 15)
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 clock = pygame.time.Clock()
 crashed = False
@@ -57,25 +58,32 @@ class paddle:
 
 class ball:
     x = 400
-    y = 300
+    y = 400
     angle = 90
     side = 0
     sprite = pygame.sprite.Sprite()
     sprite.image = pygame.image.load("ball.png")
 
+
 """block format = [x,y,set to be destroyed]"""
-blocks = []
+blocks = [[384, 32, False]]
 block = pygame.sprite.Sprite()
 block.image = pygame.image.load("block.png")
+
+"""for x in range(384, 448, 32):
+    for y in range(32, 300, 32):
+        blocks.append([x, y, False])"""
 
 while not crashed:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             crashed = True
     if pygame.key.get_pressed()[pygame.K_LEFT] != 0:
-        paddle.x -= 5
+        if paddle.x > 8:
+            paddle.x -= 8
     if pygame.key.get_pressed()[pygame.K_RIGHT] != 0:
-        paddle.x += 5
+        if paddle.x < 792:
+            paddle.x += 8
     ball.x, ball.y = move(ball.x, ball.y, ball.angle, 8)
     if collision(paddle.x, ball.x, 32) & collision(paddle.y, ball.y, 16):
         if (ball.x - paddle.x) == 0:
@@ -86,21 +94,33 @@ while not crashed:
         ball.side = "ud"
     if ball.x < 0 or ball.x > 800:
         ball.side = "lr"
+    if ball.y > 600 or pygame.key.get_pressed()[pygame.K_DOWN] != 0:
+        ball.y = 300
+        ball.x = 400
+        paddle.x = 400
+        ball.angle = 90
+        blocks = [[384, 32, False]]
+        time.sleep(2)
+    """
+    for b in blocks: debugging code"""
+    score = font.render("{0}, {1}, {2}".format(ball.x, ball.y, ball.angle), True, white)
+    render(10, 10, score)
+    """debugging code
+    """
     render(paddle.x - 32, paddle.y - 8, paddle.sprite.image)
     render(ball.x - 8, ball.y - 8, ball.sprite.image)
     for b in range(len(blocks)):
         if collision(ball.x, blocks[b][0], 16) & collision(ball.y, blocks[b][1], 16):
-            if math.fabs(ball.y-blocks[b][1]) > math.fabs(ball.x-blocks[b][0]):
-                ball.side = "ud"
+            if math.fabs(ball.y - blocks[b][1]) < math.fabs(ball.x - blocks[b][0]):
+                ball.side = "lr"
                 blocks[b][2] = True
                 break
             else:
-                ball.side = "lr"
+                ball.side = "ud"
                 blocks[b][2] = True
                 break
     for b in blocks:
         render(b[0] - 16, b[1] - 16, block.image)
-    for b in blocks:
         if b[2] == True:
             blocks.remove(b)
     if ball.side == "lr":
