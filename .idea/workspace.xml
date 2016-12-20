@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f42c6ec8-688b-41c4-9428-b290d248a7c1" name="Default" comment="added sprites for objects&#10;added collision for paddle, ball, blocks&#10;added bouncing on screen and objects&#10;added destruction sequence for blocks">
+    <list default="true" id="f42c6ec8-688b-41c4-9428-b290d248a7c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
@@ -21,8 +21,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+            <state relative-caret-position="241">
+              <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
               <folding>
                 <element signature="e#26#39#0" expanded="true" />
               </folding>
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482210844241</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed a few bugs with block collision&#10;added ball respawning&#10;found a strange bug where respawned balls interact strangely with blocks parallel to them">
+      <created>1482268433685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1482268433685</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -310,7 +317,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initialized main files" />
     <MESSAGE value="added sprites for objects&#10;added collision for paddle, ball, blocks&#10;added bouncing on screen and objects&#10;added destruction sequence for blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sprites for objects&#10;added collision for paddle, ball, blocks&#10;added bouncing on screen and objects&#10;added destruction sequence for blocks" />
+    <MESSAGE value="fixed a few bugs with block collision&#10;added ball respawning&#10;found a strange bug where respawned balls interact strangely with blocks parallel to them" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a few bugs with block collision&#10;added ball respawning&#10;found a strange bug where respawned balls interact strangely with blocks parallel to them" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,8 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+        <state relative-caret-position="241">
+          <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
           <folding>
             <element signature="e#26#39#0" expanded="true" />
           </folding>

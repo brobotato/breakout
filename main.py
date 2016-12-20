@@ -61,18 +61,18 @@ class ball:
     y = 400
     angle = 90
     side = 0
+    lives = 3
     sprite = pygame.sprite.Sprite()
     sprite.image = pygame.image.load("ball.png")
 
 
 """block format = [x,y,set to be destroyed]"""
-blocks = [[384, 32, False]]
+blocks = []
 block = pygame.sprite.Sprite()
 block.image = pygame.image.load("block.png")
-
-"""for x in range(384, 448, 32):
-    for y in range(32, 300, 32):
-        blocks.append([x, y, False])"""
+for x in range(64, 768, 32):
+    for y in range(96, 256, 32):
+        blocks.append([x, y, False])
 
 while not crashed:
     for event in pygame.event.get():
@@ -94,19 +94,24 @@ while not crashed:
         ball.side = "ud"
     if ball.x < 0 or ball.x > 800:
         ball.side = "lr"
-    if ball.y > 600 or pygame.key.get_pressed()[pygame.K_DOWN] != 0:
-        ball.y = 300
-        ball.x = 400
-        paddle.x = 400
-        ball.angle = 90
-        blocks = [[384, 32, False]]
-        time.sleep(2)
-    """
-    for b in blocks: debugging code"""
-    score = font.render("{0}, {1}, {2}".format(ball.x, ball.y, ball.angle), True, white)
+    if ball.y > 600:
+        if ball.lives > 0:
+            ball.y = 400
+            ball.x = 400
+            paddle.x = 400
+            ball.angle = 90
+            ball.lives -= 1
+            time.sleep(2)
+        else:
+            crashed = True
+    """ debugging code
+    for b in blocks:
+        score = font.render("{0}, {1}, {2}".format(ball.x, ball.y, ball.angle), True, white)
     render(10, 10, score)
-    """debugging code
+    debugging code
     """
+    for x in range (0,ball.lives,1):
+        render(x*24+8,576,ball.sprite.image)
     render(paddle.x - 32, paddle.y - 8, paddle.sprite.image)
     render(ball.x - 8, ball.y - 8, ball.sprite.image)
     for b in range(len(blocks)):
@@ -121,6 +126,7 @@ while not crashed:
                 break
     for b in blocks:
         render(b[0] - 16, b[1] - 16, block.image)
+    for b in blocks:
         if b[2] == True:
             blocks.remove(b)
     if ball.side == "lr":
@@ -129,6 +135,8 @@ while not crashed:
     if ball.side == "ud":
         ball.angle *= -1
         ball.side = 0
+    if blocks == []:
+        crashed = True
     pygame.display.update()
     clock.tick(50)
     gameDisplay.fill(black)
