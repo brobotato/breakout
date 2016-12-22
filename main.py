@@ -10,7 +10,7 @@ display_width = 800
 display_height = 600
 pygame.display.set_caption('Breakout')
 icon =  pygame.sprite.Sprite()
-icon.image = pygame.image.load("icon.png")
+icon.image = pygame.image.load("resources/icon.png")
 pygame.display.set_icon(icon.image)
 
 black = (0, 0, 0)
@@ -161,7 +161,7 @@ class paddle:
     x = 400
     y = 500
     sprite = pygame.sprite.Sprite()
-    sprite.image = pygame.image.load("paddle.png")
+    sprite.image = pygame.image.load("resources/paddle.png")
 
 
 class ball:
@@ -171,7 +171,7 @@ class ball:
     side = 0
     lives = 3
     sprite = pygame.sprite.Sprite()
-    sprite.image = pygame.image.load("ball.png")
+    sprite.image = pygame.image.load("resources/ball.png")
 
 
 # block format = [x,y,set to be destroyed]
@@ -179,7 +179,7 @@ blocks = []
 lvl1 = []
 lvl2 = []
 block = pygame.sprite.Sprite()
-block.image = pygame.image.load("block.png")
+block.image = pygame.image.load("resources/block.png")
 for x in range(64, 768, 32):
     for y in range(96, 256, 32):
         lvl1.append([x, y, False])
