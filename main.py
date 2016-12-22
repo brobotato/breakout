@@ -9,7 +9,7 @@ pygame.init()
 display_width = 800
 display_height = 600
 pygame.display.set_caption('Breakout')
-icon =  pygame.sprite.Sprite()
+icon = pygame.sprite.Sprite()
 icon.image = pygame.image.load("resources/icon.png")
 pygame.display.set_icon(icon.image)
 
@@ -36,7 +36,7 @@ title = font.render("Breakout", True, white)
 title_rect = title.get_rect(center=(display_width / 2, -10 + display_height / 2))
 subtitle = font.render("Press Space to Start", True, white)
 subtitle_rect = subtitle.get_rect(center=(display_width / 2, 10 + display_height / 2))
-subtitle2 = font.render("Level Select: Use 1-9", True, white)
+subtitle2 = font.render("Level Select", True, white)
 subtitle2_rect = subtitle2.get_rect(center=(display_width / 2, 85 + display_height / 2))
 level = font.render("{0}".format(level_name), True, white)
 level_rect = level.get_rect(center=(display_width / 2, 100 + display_height / 2))
