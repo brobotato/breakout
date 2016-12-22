@@ -16,6 +16,7 @@ font = pygame.font.Font("resources/vgaoem.fon", 15)
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 clock = pygame.time.Clock()
 crashed = False
+global playing
 playing = False
 
 pygame.mixer.init()
@@ -26,6 +27,10 @@ gameover = font.render("Game Over!", True, white)
 gameover_rect = gameover.get_rect(center=(display_width / 2, display_height / 2))
 victory = font.render("You Win!", True, white)
 victory_rect = victory.get_rect(center=(display_width / 2, display_height / 2))
+title = font.render("Breakout", True, white)
+title_rect = title.get_rect(center=(display_width / 2, -10 + display_height / 2))
+subtitle = font.render("Press Space to Start", True, white)
+subtitle_rect = subtitle.get_rect(center=(display_width / 2, 10 + display_height / 2))
 
 
 def collision(a, b, size):
@@ -67,15 +72,12 @@ def reset():
     ball.angle = 90
     ball.side = 0
     ball.lives = 3
+    playing = False
+    return playing
 
 
 def run():
     # execute game code
-    if blocks == []:
-        gameDisplay.blit(victory, victory_rect)
-        pygame.display.update()
-        playing = False
-        return playing
     if pygame.key.get_pressed()[pygame.K_LEFT] != 0:
         if paddle.x > 7:
             paddle.x -= 7
@@ -112,6 +114,11 @@ def run():
             pygame.display.update()
             playing = False
             return playing
+    if blocks == []:
+        gameDisplay.blit(victory, victory_rect)
+        pygame.display.update()
+        playing = False
+        return playing
     for x in range(0, ball.lives, 1):
         render(x * 24 + 8, 576, ball.sprite.image)
     render(paddle.x - 32, paddle.y - 8, paddle.sprite.image)
@@ -139,6 +146,7 @@ def run():
             ball.angle *= -1
         bounce.play()
         ball.side = 0
+
 
 class paddle:
     x = 400
@@ -172,12 +180,12 @@ while not crashed:
         if event.type == pygame.QUIT:
             crashed = True
     if (pygame.key.get_pressed()[pygame.K_SPACE] != 0) & (playing == False):
-        reset()
         playing = True
     if playing == True:
         run()
-    else:
-        reset()
+    elif playing == False:
+        gameDisplay.blit(title, title_rect)
+        gameDisplay.blit(subtitle, subtitle_rect)
     pygame.display.update()
     clock.tick(50)
     gameDisplay.fill(black)
