@@ -8,6 +8,10 @@ pygame.init()
 
 display_width = 800
 display_height = 600
+pygame.display.set_caption('Breakout')
+icon =  pygame.sprite.Sprite()
+icon.image = pygame.image.load("icon.png")
+pygame.display.set_icon(icon.image)
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -170,9 +174,36 @@ blocks = []
 lvl1 = []
 block = pygame.sprite.Sprite()
 block.image = pygame.image.load("block.png")
-for x in range(64, 768, 32):
-    for y in range(96, 256, 32):
-        lvl1.append([x, y, False])
+for y in range(96, 256, 32):
+    lvl1.append([64, y, False])
+for y in range(96, 256, 32):
+    lvl1.append([128, y, False])
+lvl1.append([96, 160, False])
+for y in range(96, 256, 32):
+    lvl1.append([192, y, False])
+for x in range(224, 288, 32):
+    lvl1.append([x, 96, False])
+for x in range(224, 288, 32):
+    lvl1.append([x, 160, False])
+for x in range(224, 288, 32):
+    lvl1.append([x, 224, False])
+for y in range(96, 256, 32):
+    lvl1.append([320, y, False])
+for x in range(352, 416, 32):
+    lvl1.append([x, 224, False])
+for y in range(96, 256, 32):
+    lvl1.append([448, y, False])
+for x in range(480, 544, 32):
+    lvl1.append([x, 224, False])
+for y in range(96, 256, 32):
+    lvl1.append([576, y, False])
+for y in range(96, 256, 32):
+    lvl1.append([640, y, False])
+lvl1.append([608, 96, False])
+lvl1.append([608, 224, False])
+for y in range(96, 192, 32):
+    lvl1.append([736, y, False])
+lvl1.append([736, 224, False])
 blocks = lvl1
 
 while not crashed:
