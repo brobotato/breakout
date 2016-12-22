@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f42c6ec8-688b-41c4-9428-b290d248a7c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -284,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482369618486</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added icon + app name&#10;Hello!">
+      <created>1482382488213</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1482382488213</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,7 +326,8 @@
     <MESSAGE value="added lives&#10;added blocks&#10;added crashing on game lose/win" />
     <MESSAGE value="added sound&#10;fixed bug when ball hit exact top corners of map&#10;sectioned off game code into run()&#10;created victory and loss catches&#10;created format for making levels&#10;you must start game with space&#10;tidied up code&#10;maybe other fixes?" />
     <MESSAGE value="added title screen&#10;added game over and victory screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="added title screen&#10;added game over and victory screens" />
+    <MESSAGE value="added icon + app name&#10;Hello!" />
+    <option name="LAST_COMMIT_MESSAGE" value="added icon + app name&#10;Hello!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
