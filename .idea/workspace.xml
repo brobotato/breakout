@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f42c6ec8-688b-41c4-9428-b290d248a7c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+            <state relative-caret-position="309">
+              <caret line="225" column="30" lean-forward="true" selection-start-line="222" selection-start-column="22" selection-end-line="225" selection-end-column="30" />
               <folding>
                 <element signature="e#26#39#0" expanded="true" />
               </folding>
@@ -290,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482382488213</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="something&#10;">
+      <created>1482382874735</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1482382874735</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -327,7 +335,8 @@
     <MESSAGE value="added sound&#10;fixed bug when ball hit exact top corners of map&#10;sectioned off game code into run()&#10;created victory and loss catches&#10;created format for making levels&#10;you must start game with space&#10;tidied up code&#10;maybe other fixes?" />
     <MESSAGE value="added title screen&#10;added game over and victory screens" />
     <MESSAGE value="added icon + app name&#10;Hello!" />
-    <option name="LAST_COMMIT_MESSAGE" value="added icon + app name&#10;Hello!" />
+    <MESSAGE value="something&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="something&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -346,11 +355,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../asteroids/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -398,14 +416,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="12" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+        <state relative-caret-position="309">
+          <caret line="225" column="30" lean-forward="true" selection-start-line="222" selection-start-column="22" selection-end-line="225" selection-end-column="30" />
           <folding>
             <element signature="e#26#39#0" expanded="true" />
           </folding>

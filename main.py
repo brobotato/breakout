@@ -22,6 +22,7 @@ clock = pygame.time.Clock()
 crashed = False
 global playing
 playing = False
+level_name = "Level 1"
 
 pygame.mixer.init()
 bounce = pygame.mixer.Sound("resources/ball_bounce.wav")
@@ -35,6 +36,10 @@ title = font.render("Breakout", True, white)
 title_rect = title.get_rect(center=(display_width / 2, -10 + display_height / 2))
 subtitle = font.render("Press Space to Start", True, white)
 subtitle_rect = subtitle.get_rect(center=(display_width / 2, 10 + display_height / 2))
+subtitle2 = font.render("Level Select: Use 1-9", True, white)
+subtitle2_rect = subtitle2.get_rect(center=(display_width / 2, 85 + display_height / 2))
+level = font.render("{0}".format(level_name), True, white)
+level_rect = level.get_rect(center=(display_width / 2, 100 + display_height / 2))
 
 
 def collision(a, b, size):
@@ -172,38 +177,42 @@ class ball:
 # block format = [x,y,set to be destroyed]
 blocks = []
 lvl1 = []
+lvl2 = []
 block = pygame.sprite.Sprite()
 block.image = pygame.image.load("block.png")
+for x in range(64, 768, 32):
+    for y in range(96, 256, 32):
+        lvl1.append([x, y, False])
 for y in range(96, 256, 32):
-    lvl1.append([64, y, False])
+    lvl2.append([64, y, False])
 for y in range(96, 256, 32):
-    lvl1.append([128, y, False])
-lvl1.append([96, 160, False])
+    lvl2.append([128, y, False])
+lvl2.append([96, 160, False])
 for y in range(96, 256, 32):
-    lvl1.append([192, y, False])
+    lvl2.append([192, y, False])
 for x in range(224, 288, 32):
-    lvl1.append([x, 96, False])
+    lvl2.append([x, 96, False])
 for x in range(224, 288, 32):
-    lvl1.append([x, 160, False])
+    lvl2.append([x, 160, False])
 for x in range(224, 288, 32):
-    lvl1.append([x, 224, False])
+    lvl2.append([x, 224, False])
 for y in range(96, 256, 32):
-    lvl1.append([320, y, False])
+    lvl2.append([320, y, False])
 for x in range(352, 416, 32):
-    lvl1.append([x, 224, False])
+    lvl2.append([x, 224, False])
 for y in range(96, 256, 32):
-    lvl1.append([448, y, False])
+    lvl2.append([448, y, False])
 for x in range(480, 544, 32):
-    lvl1.append([x, 224, False])
+    lvl2.append([x, 224, False])
 for y in range(96, 256, 32):
-    lvl1.append([576, y, False])
+    lvl2.append([576, y, False])
 for y in range(96, 256, 32):
-    lvl1.append([640, y, False])
-lvl1.append([608, 96, False])
-lvl1.append([608, 224, False])
+    lvl2.append([640, y, False])
+lvl2.append([608, 96, False])
+lvl2.append([608, 224, False])
 for y in range(96, 192, 32):
-    lvl1.append([736, y, False])
-lvl1.append([736, 224, False])
+    lvl2.append([736, y, False])
+lvl2.append([736, 224, False])
 blocks = lvl1
 
 while not crashed:
@@ -212,11 +221,21 @@ while not crashed:
             crashed = True
     if (pygame.key.get_pressed()[pygame.K_SPACE] != 0) & (playing == False):
         playing = True
+    if (pygame.key.get_pressed()[pygame.K_1] != 0) & (playing == False):
+        blocks = lvl1
+        level_name = "Level 1"
+    if (pygame.key.get_pressed()[pygame.K_2] != 0) & (playing == False):
+        blocks = lvl2
+        level_name = "Level 2"
     if playing == True:
         run()
     elif playing == False:
+        level = font.render("{0}".format(level_name), True, white)
+        level_rect = level.get_rect(center=(display_width / 2, 100 + display_height / 2))
+        gameDisplay.blit(level, level_rect)
         gameDisplay.blit(title, title_rect)
         gameDisplay.blit(subtitle, subtitle_rect)
+        gameDisplay.blit(subtitle2, subtitle2_rect)
     pygame.display.update()
     clock.tick(50)
     gameDisplay.fill(black)
