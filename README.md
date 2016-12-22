@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+## Breakout with Pygame
 
-You can use the [editor on GitHub](https://github.com/brobotato/breakout/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Breakout is a poorly optimized, buggy, incomplete, poorly coded port ofthe legendary Breakout from the Atari 2600. The only redeeming factor is that you can create custom levels with agonizing effort.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Do I get points for honesty?
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Custom Level format
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+Levels are stored in a list named "blocks":
 
-- Bulleted
-- List
+`blocks = []`
 
-1. Numbered
-2. List
+A level is composed of a list of lists. Each individual list inside the list composes a block.
 
-**Bold** and _Italic_ and `Code` text
+Blocks are formatted as such:
 
-[Link](url) and ![Image](src)
+`[x location, y location, set to be destroyed (bool)]`
+
+You can use `blocks.append([x,y,False])` to insert individual blocks into the level.
+
+Level data is contained in the following lines:
+`
+173. blocks = []
+174. lvl1 = []
+175. block = pygame.sprite.Sprite()
+176. block.image = pygame.image.load("block.png")
+177. for x in range(64, 768, 32):
+178.     for y in range(96, 256, 32):
+179.         lvl1.append([x, y, False])
+180. blocks = lvl1
+`
+Create variable, name it whatever you want. Fill it with your blocks according to the above format.
+Set blocks equal to that variable. Now you can play with your custom level.
+
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/brobotato/breakout/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Need help? Email me at brianxu01@gmail.com. Putting my email here is probably a bad idea but whatever.
