@@ -26,13 +26,31 @@ Level data is contained in the following lines:
 `174. lvl1 = []`
 `175. block = pygame.sprite.Sprite()`
 `176. block.image = pygame.image.load("block.png")`
-`177. for x in range(64, 768, 32):`
-`178.     for y in range(96, 256, 32):`
-`179.         lvl1.append([x, y, False])`
 `180. blocks = lvl1`
+```
+### To create a custom level:
 
-Create variable, name it whatever you want. Fill it with your blocks according to the above format.
-Set blocks equal to that variable. Now you can play with your custom level.
+```markdown
+
+Create a custom level by making a custom variable and filling it with block data as shown above.
+
+ex.
+
+`customlvl = []`
+
+`for x in range(64, 768, 32):`
+`     for y in range(96, 256, 32):`
+`         customlvl.append([x, y, False])`
+
+Then, go into main() and insert this piece of code somewhere in the loop
+
+`if (pygame.key.get_pressed()[pygame.YOUR-KEY] != 0) & (playing == False):`
+  `blocks = customlvl`
+  `level_name = "Level Name"`
+  
+Replace YOUR-KEY with the key that should designate your level.
+Replace customlvl with the level variable's name
+Replace Level Name with the Level's name.
 
 ```
 
