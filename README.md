@@ -53,7 +53,3 @@ Replace customlvl with the level variable's name
 Replace Level Name with the Level's name.
 
 ```
-
-### Support or Contact
-
-Need help? Email me at brianxu01@gmail.com. Putting my email here is probably a bad idea but whatever.
